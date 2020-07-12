@@ -47,6 +47,17 @@ const app = props => {
       other: (newOtherState === otherState.other) ? 'some other Val' : newOtherState
     });
   }
+
+  const dummyHandler = () => {
+    console.log('running dummy handler');
+    setPersonState({
+      persons:[
+        {name: 'Abhilash', weight: 679},
+        {name: 'Dummy', weight: 7893},
+        {name: 'Dummy', weight: 7893}
+      ]
+    });
+  }
   
   console.log(personState, otherState);
   // render() {
@@ -56,6 +67,7 @@ const app = props => {
       <Person 
         name='Raghul' 
         weight='3000'
+        // clickAction={dummyHandler}
         clickAction={personHandler.bind(this, 'Maxi', 400)}
         onChangeAction={personNameHandler}></Person>
       <br />
